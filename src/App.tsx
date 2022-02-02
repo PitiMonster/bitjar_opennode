@@ -1,26 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from "react";
+import MainPage from "./pages/MainPage";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import { runSocket, runEmitter } from "./utils/websockets";
+import { generateUniqueId } from "./utils/helpers";
+
+const App: React.FC = () => {
+  // useEffect(() => {
+  //   runSocket();
+  //   let uniqueId;
+  //   if (!localStorage.getItem("uniqueId")) {
+  //     uniqueId = generateUniqueId();
+  //     console.log(uniqueId);
+  //     localStorage.setItem("uniqueId", uniqueId);
+  //   } else {
+  //     uniqueId = localStorage.getItem("uniqueId");
+  //   }
+  //   runEmitter("set unique id", { uniqueId });
+  // }, []);
+  return <MainPage></MainPage>;
+};
 
 export default App;
